@@ -6,7 +6,6 @@ export default function Home() {
   const dataUser = {
     email: 'arthur_acs@hotmail.com',
     senha: 'Acs2228@tt7',
-    callbackUrl: 'http://localhost:3000',
     redirect: true
 
   }
