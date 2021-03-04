@@ -1,18 +1,5 @@
-type ColorsProviderProps = {
-  white: string,
-  background:string,
-  grayline: string,
-  text: string,
-  textHighlight: string,
-  title: string,
-  red: string,
-  green: string,
-  blue: string,
-  blueDark: string,
-  blueTwitter: string,
-}
 
-export const ColorsProvider:ColorsProviderProps = {
+export const ColorsProvider = {
   white: '#fff',
   background:'#f2f3f5',
   grayline: '#dcdde0',
@@ -24,4 +11,9 @@ export const ColorsProvider:ColorsProviderProps = {
   blue: '#5965e0',
   blueDark: '#4953b8',
   blueTwitter: '#2aa9e0',
+  grayClean: '#d7d8da',
+  OverlayBg: 'rgba(242,243,245, 0.8)',
+  ModalShadow: 'rgba(0,0,0, 0.5)',
+  CountdownShadow: 'rgba(0,0,0,0.05)',
+  CountdownBorder: '#f0f1f3aa'
 }

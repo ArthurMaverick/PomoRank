@@ -6,11 +6,11 @@ export const ChallengeActive = styled.div`
   flex-direction: column;
 
   header {
-    color: var(--blue);
+    color: ${props=> props.theme.blue};
     font-weight: 600;
     font-size: 1.25rem;
     padding: 0 2rem 1.5rem;
-    border-bottom: 1px solid var(--gray-line);
+    border-bottom: 1px solid ${props=> props.theme.grayline};
   }
 
   main {
@@ -24,7 +24,7 @@ export const ChallengeActive = styled.div`
   main strong {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--white);
+    color: ${props=> props.theme.white};
     margin: 1.5rem 0 1rem;
   }
 
@@ -46,7 +46,7 @@ export const ChallengeActive = styled.div`
   border: none;
   border-radius: 5px;
 
-  color: var(--white);
+  color: ${props=> props.theme.white};
 
   font-size: 1rem;
   font-weight: 600;

@@ -25,7 +25,7 @@ export const CoundownBtn = styled.button`
   }
 
   &:disabled{
-    background: ${props => props.theme.white};
+    background: ${props => props.theme.grayClean};
     color: ${props=> props.theme.text};
     cursor: not-allowed;
   }

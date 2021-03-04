@@ -7,7 +7,7 @@ export const CompletedChallenges = styled.div`
 
   margin: 3.5rem 0;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #d7d8da;
+  border-bottom: 1px solid ${props=> props.theme.grayClean};
 
   font-weight: 500;
 
