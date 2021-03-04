@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { challengesContext, CountdownContext } from '../../contexts';
+import { challengesContext, CountdownContext } from '../../../contexts';
 import {ChallengeBoxInative } from './PainelIsUnable'
 import {ChallengeBoxAtive} from './PainelIsEnable'
-import {style} from '../../stylus'
+import {ChallengeBoxContainer} from './styles'
 
 export const ChallengeBox = () => {
   const {activeChallenge, resetChallenge, completedChallenge } = useContext(challengesContext);
@@ -19,7 +19,7 @@ export const ChallengeBox = () => {
     }
   
   return (
-    <div className={style.ChallengeBox.challengeBoxContainer}>
+    <ChallengeBoxContainer>
       { activeChallenge
         
         ? (
@@ -31,7 +31,7 @@ export const ChallengeBox = () => {
           ) 
         : ( <ChallengeBoxInative/> ) 
       }
-    </div>
+    </ChallengeBoxContainer>
   )
 }
 

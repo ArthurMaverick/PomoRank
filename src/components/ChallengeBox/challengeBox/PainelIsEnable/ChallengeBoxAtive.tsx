@@ -1,5 +1,5 @@
 import React from 'react'
-import {style} from '../../../stylus'
+import {ChallengeActive, ChallengeFailBtn,ChallengeSuccededBtn} from './styles'
 
 interface ChallengeBoxAtiveProps {
   activeChallenge: {
@@ -19,7 +19,7 @@ export const ChallengeBoxAtive = (
   }:ChallengeBoxAtiveProps) => {
 
   return (
-    <div className={style.ChallengeBox.challengeActive}>
+    <ChallengeActive>
       <header>Ganhe {activeChallenge.amount} xp</header>
       <main>
         <img src="icons/body.svg" alt={`icon/${activeChallenge.type}`}/>
@@ -28,22 +28,22 @@ export const ChallengeBoxAtive = (
       </main>
 
       <footer>
-      <button 
+      <ChallengeFailBtn 
         type="button"
-        className={style.ChallengeBox.challengeFailBtn}
+        // className={style.ChallengeBox.challengeFailBtn}
         onClick={handleChallengeFail}
       > 
         Falhei
-      </button>
+      </ChallengeFailBtn>
 
-      <button 
+      <ChallengeSuccededBtn 
         type="button"
-        className={style.ChallengeBox.challengeSuccededBtn}
+        // className={style.ChallengeBox.challengeSuccededBtn}
         onClick={handleChallengeSucceeded}             
       > 
         Completei
-      </button>
+      </ChallengeSuccededBtn>
       </footer>
-    </div>
+    </ChallengeActive>
   )
 }

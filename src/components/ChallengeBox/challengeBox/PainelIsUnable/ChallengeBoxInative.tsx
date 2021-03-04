@@ -1,8 +1,8 @@
-import {style} from '../../../stylus'
+import {ChallengeisNotActive} from './styles'
 
 export const ChallengeBoxInative = () => {
   return (
-    <div className={style.ChallengeBox.challengeisNotActive}>
+    <ChallengeisNotActive>
     <strong>
       Finalize um ciclo para receber desafios
     </strong>
@@ -10,6 +10,6 @@ export const ChallengeBoxInative = () => {
       <img src="icons/level-up.svg" alt="Level Up"/>
       Avance de level completando desafios
     </p>
-  </div>
+  </ChallengeisNotActive>
   )
 }

@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { ChallengeBox, CompleteChallenges, CountDown, ExperienceBar, Profile } from '../components'
 import { CountdownProvider, Challengeprovider } from '../contexts'
-import { style } from '../stylus'
+import {ContainerHomePage} from '../components/view'
 
 interface CookiesBrowserProps {
   level: number
@@ -22,7 +22,7 @@ export default function Home({
     challengeCompleted={challengeCompleted}
   >
 
-    <div className={style.pageHome.container}>
+    <ContainerHomePage>
         <Head>
           <title>inicio  | Moveit</title>
         </Head>
@@ -41,7 +41,7 @@ export default function Home({
           </div>
         </section>
       </CountdownProvider>
-    </div>
+    </ContainerHomePage>
   </Challengeprovider>
 
   )

@@ -1,4 +1,3 @@
-import { type } from "os"
 
 type ColorsProviderProps = {
   white: string,
