@@ -1,12 +1,12 @@
 import {useContext} from 'react'
-import {style} from '../../stylus'
+import {ProfileContainer} from './styles'
 import {challengesContext} from '../../contexts'
 export const Profile = () => {
 
   const {level} = useContext(challengesContext)
 
   return (
-    <div className={style.profile.profileContainer}>
+    <ProfileContainer>
       <img src="https://github.com/ArthurMaverick.png" alt="Arthur"/>
       <div>
           <strong>Arthur Santos</strong>
@@ -16,6 +16,6 @@ export const Profile = () => {
           </p>
         </div>
       
-    </div>
+    </ProfileContainer>
   )
 }
