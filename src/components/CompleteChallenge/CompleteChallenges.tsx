@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import {style} from '../../stylus'
+import {CompletedChallenges} from './styles'
 import {challengesContext} from '../../contexts'
 
 export const CompleteChallenges = () => {
@@ -7,9 +7,9 @@ export const CompleteChallenges = () => {
   const {challengeCompleted} = useContext(challengesContext)
   
   return (
-    <div className={style.Challenger.completedChallengers}>
+    <CompletedChallenges>
       <span>Desafios completos</span>
       <span>{challengeCompleted ?? 0}</span>
-    </div>
+    </CompletedChallenges>
   )
 }
