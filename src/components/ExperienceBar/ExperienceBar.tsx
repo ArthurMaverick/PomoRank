@@ -1,26 +1,24 @@
 import { useContext } from 'react';
-import {style} from '../../stylus'
 import {challengesContext} from '../../contexts'
+import {ExperienceBarUi} from './styles'
 
 export const ExperienceBar = () => {
   const {currentExperience, experienceToNextLevel} = useContext(challengesContext)
   const percentToNextLevel = Math.round(currentExperience * 100) / experienceToNextLevel
 
   return (
-    <header className={style.experience.experienceBar}>
+    <ExperienceBarUi percentToNextLevel={percentToNextLevel} >
       <span>0 xp</span>
       <div>
-        <div style={{width: `${percentToNextLevel ?? 0}%` }}/>
+        <div/>
         
-        <span 
-          className={style.experience.currentExperience} 
-          style={{left: `${percentToNextLevel ?? 0}%`}}
-        >
+        <span className='currentExperience'>
           {currentExperience}xp
         </span>
+        
       </div>
       <span>{experienceToNextLevel} xp</span>
-    </header>
+    </ExperienceBarUi>
   );
 }
 

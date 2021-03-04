@@ -2,7 +2,7 @@
 type ColorsProviderProps = {
   white: string,
 background:string,
-grayline: string,
+grayLine: string,
 text: string,
 textHighlight: string,
 title: string,
@@ -16,7 +16,7 @@ blueTwitter: string,
 export const ColorsProvider:ColorsProviderProps = {
 white: '#fff',
 background:'#f2f3f5',
-grayline: '#dcdde0',
+grayLine: '#dcdde0',
 text: '#666666',
 textHighlight: '#b3b9ff',
 title: '#2e384d',
