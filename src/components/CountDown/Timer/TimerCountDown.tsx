@@ -1,5 +1,5 @@
 import React from 'react'
-import { style } from '../../stylus'
+import {CountdownContainer} from './styles'
 
 interface MinutesAndSecondsProps {
   min: Array<string>
@@ -8,7 +8,7 @@ interface MinutesAndSecondsProps {
 
 export const Timer = ({min, sec}: MinutesAndSecondsProps) => {
   return (
-    <div className={style.CountDown.countdownContainer}>
+    <CountdownContainer>
         <div>
           <span>{min[0]}</span>
           <span>{min[1]}</span>
@@ -18,6 +18,6 @@ export const Timer = ({min, sec}: MinutesAndSecondsProps) => {
           <span>{sec[0]}</span>
           <span>{sec[1]}</span>
         </div>
-      </div>
+      </CountdownContainer>
   )
 }

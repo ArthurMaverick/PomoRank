@@ -1,4 +1,4 @@
-.countdownContainer  {
+/* /* .countdownContainer  {
   display: flex;
   align-items: center;
   font-family: Rajdhani;
@@ -34,7 +34,7 @@ flex: 1;
 .countdownContainer  > span{
   font-size: 6.25rem;
   margin: 0  0.5rem;
-}
+} */
 
 .coundownBtn {
   width: 100%;
@@ -75,4 +75,4 @@ flex: 1;
   background: var(--white);
   color: var(--text);
   cursor: not-allowed;
-}
+} 

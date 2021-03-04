@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
-import { FailBtn } from './Buttons'
-import { SuccessBtn } from './Buttons'
-import {FinalCycleBtn } from './Buttons'
+import { FailBtn } from './FailButton'
+import { SuccessBtn } from './successButton'
+import {FinalCycleBtn } from './FinalCycleButton'
 
 interface ChildrenProps {
   children: ReactNode

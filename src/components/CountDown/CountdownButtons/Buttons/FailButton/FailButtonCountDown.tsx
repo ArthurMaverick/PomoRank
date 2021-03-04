@@ -1,7 +1,6 @@
 import React, { ReactNode, useContext } from 'react';
-import { CountdownContext } from '../../../../contexts';
-import { style } from '../../../../stylus';
-
+import { CountdownContext } from '../../../../../contexts';
+import {CoundownBtn} from './styles'
 
 interface ChildrenProps {
   children: ReactNode
@@ -17,18 +16,15 @@ export const FailBtn = ({children}:ChildrenProps) => {
     setTime} = useContext(CountdownContext);
 
   return (
-    <button 
+    <CoundownBtn 
       type='button' 
-      className={
-        `${style.CountDown.coundownBtn} 
-        ${style.CountDown.coundownButtonActive}`
-      }
+      className='coundownButtonActive'
       onClick={()=>{
       resetTimer(setIsActive, setTime, countdownTimeout, setHasFinished)}
       }
     >
       {children}
-      </button>
+      </CoundownBtn>
   )
 }
 

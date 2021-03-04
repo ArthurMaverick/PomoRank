@@ -1,7 +1,8 @@
+// TODO passar context por props
 import { useContext} from 'react'
 import { CountdownContext } from '../../contexts'
 import {Buttons} from './CountdownButtons'
-import {Timer} from './TimerCountDown'
+import {Timer} from './Timer/TimerCountDown'
 
 export const CountDown = () => {
   const {minutes,seconds, HasFinished, isActive} = useContext(CountdownContext)
