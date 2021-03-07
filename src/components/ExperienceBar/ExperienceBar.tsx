@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import {challengesContext} from '../../contexts'
 import {ExperienceBarUi} from './styles'
 
+
 export const ExperienceBar = () => {
   const {currentExperience, experienceToNextLevel} = useContext(challengesContext)
   const percentToNextLevel = Math.round(currentExperience * 100) / experienceToNextLevel

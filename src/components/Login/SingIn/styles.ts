@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const Container = styled.section`
-  width: 100vw;
+
+export const SingInContainer = styled.section`
+   width: 100vw;
   height: 100vh;
   /* background: linear-gradient(329.54deg, #5965E0 0%, #4953B8 100%);
    */
@@ -79,6 +80,8 @@ export const Container = styled.section`
       }
 
       div.formulario {
+        display: flex;
+        /* flex-wrap: nowrap; */
       
         input {
           margin-top: 20px;
@@ -91,7 +94,7 @@ export const Container = styled.section`
           font-weight: normal;
           font-size: 20px;
           line-height: 34px;
-          color: ${({theme})=> theme.white};
+          color: ${({theme})=> theme.blueDark};
           padding-left: 10px;
           outline: none;
           box-shadow: 0 2px 6px rgba(0,0,0,.2);
@@ -106,6 +109,7 @@ export const Container = styled.section`
         }
 
         button {
+          margin-top: 20px;
           height: 50px;
           width: 50px;
           background: #2E384D;
@@ -125,8 +129,4 @@ export const Container = styled.section`
       }
     }
   }
-
-
-
-
 `

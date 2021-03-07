@@ -1,2 +1,2 @@
-export * from '../components/ChallengeBox';
 export * from './functions';
+export * from './interfaces';

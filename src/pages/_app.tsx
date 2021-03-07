@@ -1,20 +1,21 @@
+import { AppProps } from 'next/app'
 import {ThemeProvider} from 'styled-components'
-import {ColorsProvider} from '../styles/global'
 import {GlobalStyle} from '../styles/global'
+import {theme} from '../styles/global'
 import {CountdownProvider} from '../contexts'
 import {Provider} from 'next-auth/client'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
   <>
-    <Provider session={pageProps.session}>
-      <ThemeProvider theme={ColorsProvider}>
-        <GlobalStyle/>
+    <ThemeProvider theme={theme}>
+      <Provider session={pageProps.session}>
         <CountdownProvider>
           <Component {...pageProps} />
+        <GlobalStyle/>
         </CountdownProvider>
-      </ThemeProvider>
-    </Provider>
+      </Provider>
+    </ThemeProvider>
   </>
   )
 }
