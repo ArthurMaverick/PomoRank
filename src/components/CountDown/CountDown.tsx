@@ -3,6 +3,7 @@ import { useContext} from 'react'
 import { CountdownContext } from '../../contexts'
 import {Buttons} from './CountdownButtons'
 import {Timer} from './Timer/TimerCountDown'
+import {Container} from './styles'
 
 export const CountDown = () => {
   const {minutes,seconds, HasFinished, isActive} = useContext(CountdownContext)
@@ -15,12 +16,12 @@ export const CountDown = () => {
   }
 
   return (
-    <div>
+    <Container>
       <Timer min={restMinutes} sec={restSeconds}/>
       {
         HasFinished 
-        ? ( <Buttons.FinalCycle/>) 
-        : (<>
+        ?  <Buttons.FinalCycle/>
+        : ( <>
               {isActive 
                 ? <Buttons.Fail> Abadonar Ciclo </Buttons.Fail>
                 : <Buttons.Success> Iniciar Ciclo </Buttons.Success>
@@ -28,7 +29,7 @@ export const CountDown = () => {
           </>
         )
       }   
-    </div>
+    </Container>
   )
 }
 

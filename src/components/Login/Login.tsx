@@ -8,7 +8,7 @@ export const LoginPage = ({session, signIn, signOut}) => {
   return (
     <Container>
       {!session 
-        ?<SingIn signIn={signIn}/> 
+        ?<SingIn  signIn={signIn}/> 
         :<SignOut signOut={signOut}/>    
       }
     </Container>

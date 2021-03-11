@@ -1,5 +1,5 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
-import { challengesContext } from "./ChallengesContext";
+import { challengesContext } from "./ChallengesContext/ChallengesContext";
 import {StartCountdown,resetTimer } from '../util'
 
 type DispatchBooleanProps = Dispatch<SetStateAction<boolean>>

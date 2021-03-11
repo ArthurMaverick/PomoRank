@@ -1,92 +1,67 @@
 //next
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import { GetServerSideProps} from 'next'
 import { getSession, useSession } from 'next-auth/client'
 //components
-import { CountdownProvider, Challengeprovider } from '../contexts'
-import {ContainerHomePage} from '../components/view'
-import { ChallengeBox, CompleteChallenges, CountDown, ExperienceBar, Profile } from '../components'
+import { ChallengeBox, CompleteChallenges, CountDown, ExperienceBar, Profile, Custom } from '../components'
+import { ContainerHomePage } from '../components/view'
+//contexts
+import { Challengeprovider, CountdownProvider } from '../contexts'
 //interfaces
-import {Github} from '../util'
+import {CookiesBrowserProps} from '../Rules'
+//utils
+import {Fetch} from '../util'
 
-interface CookiesBrowserProps {
-  level: number
-  currentExperience: number
-  challengeCompleted: number
-  json: Github | null
-}
-
-export default function Home({ 
+export default function DashBoard({ 
   level, 
   currentExperience, 
   challengeCompleted,
   json
   }:CookiesBrowserProps) {
   const [session, loading] = useSession()
+
   
 
-  if(typeof window !== 'undefined' && loading) {
-    return null
-  }
-
-  if(!session) {
+  if(typeof window !== 'undefined' && loading) return  null
+  
+  if(!session) return <Custom/>
+     
     return (
-      <main>
-        <div>
-          <h1>
-            voce se perdeu? 
-          </h1>
-            <Link href='/'>Volta para o inicio</Link>
-        </div>
-      </main>
-    )
-  }
-
-  return (
-      
-
       <Challengeprovider 
         level={level} 
         currentExperience={currentExperience} 
         challengeCompleted={challengeCompleted}
       >
-
-    <ContainerHomePage>
-        <Head> 
-          <title>{session.user.name +' | ' + 'Movit'}</title>
-        </Head>
-        
-        <ExperienceBar/>
-        
-
-      <CountdownProvider>
-        <section>
-          <div>
-            <Profile name={session?.user.name} />
-            <CompleteChallenges/>
-            <CountDown/>
-          </div>
-            <ChallengeBox/>
-          <div>
-          </div>
-        </section>
-      </CountdownProvider>
-      <h1>{json.login || 'oi'}</h1>
-    </ContainerHomePage>
-  </Challengeprovider>
-
-  )
+ 
+        <ContainerHomePage>
+          <Head> 
+            <title>{session.user.name +' | ' + 'Movit'}</title>
+          </Head>
+          
+          <ExperienceBar/>
+          
+  
+          <CountdownProvider>
+            <section>
+              <div className='timerAndProfile'>
+                <Profile name={session?.user.name} image={json.avatar_url}/>
+                <CompleteChallenges/>
+                <CountDown/>
+              </div>
+              <div className='challengerBox'>
+                <ChallengeBox/>
+              </div>
+            </section>
+          </CountdownProvider>
+        </ContainerHomePage>
+   </Challengeprovider>
+   )
 }
 
 export const getServerSideProps: GetServerSideProps =  async (context) => {
   const session = await getSession(context)
-  
   const joinName = session?.user?.name.replace(' ', '')
-  const data = await fetch(`https://api.github.com/users/${joinName}`)
-  const json = await data.json()
-  console.log(json);
-
+  const json = await Fetch(`https://api.github.com/users/${joinName}`)
   const {level, currentExperience, challengeCompleted} = context.req.cookies
  
   

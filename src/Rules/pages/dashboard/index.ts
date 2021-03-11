@@ -1,5 +1,11 @@
-export interface Github {
-  
+export interface CookiesBrowserProps {
+  level: number
+  currentExperience: number
+  challengeCompleted: number
+  json: Github | null
+}
+
+interface Github {
   login: string,
   id: number,
   node_id: string,
@@ -32,5 +38,4 @@ export interface Github {
   following: number,
   created_at: string,
   updated_at: string
-
 }

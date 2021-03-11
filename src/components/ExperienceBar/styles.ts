@@ -5,10 +5,15 @@ interface BarProps {
 }
 
 
-export const ExperienceBarUi =  styled.header<BarProps>`
+export const ExperienceBarUi =  styled.div<BarProps>`
+  grid-area: 'experiencebar';
   display: flex;
   align-items: center;
   
+  @media(max-width: 800px) {
+    grid-area: 'experiencebar';
+  }
+
   span {
    font-size: 1rem;
 
@@ -18,7 +23,7 @@ export const ExperienceBarUi =  styled.header<BarProps>`
     flex: 1;
     height: 4px;
     border-radius: 4px;
-    background: ${props=> props.theme.grayLine};
+    background: ${props=> props.theme.grayline};
     margin: 0 1.5rem;
     position: relative; 
 

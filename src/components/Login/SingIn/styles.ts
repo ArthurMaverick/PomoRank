@@ -7,6 +7,9 @@ export const SingInContainer = styled.section`
   /* background: linear-gradient(329.54deg, #5965E0 0%, #4953B8 100%);
    */
    background-image: url('icons/background.svg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
 
   header {
     display: flex;
@@ -81,40 +84,59 @@ export const SingInContainer = styled.section`
 
       div.formulario {
         display: flex;
-        /* flex-wrap: nowrap; */
+        flex-direction: column;
       
-        input {
-          margin-top: 20px;
-          width: 340px;
-          height: 50px;
-          background: linear-gradient(-90deg, #ffffff 0%, #ffffff88 100%);
-          border: none;  
-          font-family: Inter;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 20px;
-          line-height: 34px;
-          color: ${({theme})=> theme.blueDark};
-          padding-left: 10px;
-          outline: none;
-          box-shadow: 0 2px 6px rgba(0,0,0,.2);
-          
+        div.nowrap {
+          display: flex;
+          flex-wrap: nowrap;
 
-          
-          & ::-webkit-input-placeholder {
-            color: #00000088;
+          input {
+            margin-top: 20px;
+            width: 340px;
+            height: 50px;
+            background: linear-gradient(-90deg, #ffffff 0%, #ffffff88 100%);
+            border: none;  
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 34px;
+            color: ${({theme})=> theme.blueDark};
             padding-left: 10px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,.2);
+            & ::-webkit-input-placeholder {
+              color: #00000088;
+              padding-left: 10px;
+            }
           }
 
+          button {
+            margin-top: 20px;
+            height: 50px;
+            width: 50px;
+            background: #2E384D;
+            border-radius: 0px 5px 5px 0px;
+            border: none;
+          }
         }
 
-        button {
+        div.newuser{
+        
+        margin-top: 100px;
+      
+
+        button{
           margin-top: 20px;
+          width: 150px;
           height: 50px;
-          width: 50px;
-          background: #2E384D;
-          border-radius: 0px 5px 5px 0px;
           border: none;
+          border-radius: 5px;
+          background: linear-gradient(-90deg, #ffffff 0%, #ffffff88 100%);
+          color: ${(props)=>props.theme.title};
+          font-weight: 600;
+          font-size: 19px;
+          }
         }
       }
 
@@ -127,6 +149,7 @@ export const SingInContainer = styled.section`
         line-height: 46px;
 
       }
+
     }
   }
 `

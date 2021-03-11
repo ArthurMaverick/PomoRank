@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const ChallengeBoxContainer = styled.div`
+
+
   height:  100%;
 
   background: var(--white);
@@ -12,5 +14,7 @@ export const ChallengeBoxContainer = styled.div`
   flex-direction: column;
   place-content: center;
   text-align: center;
+
+  /* @media(max-width: 800px) {} */
 
 ` 

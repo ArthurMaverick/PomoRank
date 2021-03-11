@@ -1,32 +1,10 @@
 import { createContext, ReactNode, useEffect, useState} from 'react'
 import Cookies from 'js-cookie'
-import challenges from '../../challenges.json'
-import { LevelUpModal } from '../components/LevelUpModal/LevelUpModal'
+import challenges from '../../../challenges.json'
+import { LevelUpModal } from '../../components/LevelUpModal/LevelUpModal'
+import {ChallendesContextData,ChallengeProviderProps} from './rules'
+// import {useChallenger} from './hooks';
 
-
-interface ChallendesContextData {
-  level: number
-  currentExperience: number
-  challengeCompleted: number
-  activeChallenge: ChalengesProps
-  experienceToNextLevel: number
-  levelUp(): void
-  startNewChallenge(): void
-  resetChallenge():void
-  completedChallenge(): void
-  closeLevelUpModal(): void
-}
-interface ChalengesProps {
-    type: 'body' | 'eye';
-    description: string;
-    amount: number;
-}
-interface ChallengeProviderProps {
-  children: ReactNode,
-  level: number
-  currentExperience: number
-  challengeCompleted: number
-}
 
 export const challengesContext = createContext({} as ChallendesContextData)
 
@@ -39,6 +17,10 @@ export function Challengeprovider({children,...rest}:ChallengeProviderProps) {
   const [IsLevelUpModalopen, setIsLevelUpModalopen] = useState(false);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
+  // const value = rest
+
+  // const {levelUp, closeLevelUpModal} = useChallenger(value)
+
   useEffect(() => {
     Notification.requestPermission()
   }, []);
@@ -50,7 +32,8 @@ export function Challengeprovider({children,...rest}:ChallengeProviderProps) {
     Cookies.set('challengeCompleted', challengeCompleted as unknown as string)
   }, [level, currentExperience, challengeCompleted]);
 
-  function levelUp(): void{
+  
+  function levelUp(){
     setLevel(level + 1)
     setIsLevelUpModalopen(true)
   }
@@ -95,16 +78,16 @@ export function Challengeprovider({children,...rest}:ChallengeProviderProps) {
   return (
     <challengesContext.Provider value={
       {
+        levelUp,
+        closeLevelUpModal,
         level, 
         currentExperience, 
         challengeCompleted, 
-        levelUp,
         startNewChallenge,
         activeChallenge,
         resetChallenge,
         experienceToNextLevel,
         completedChallenge,
-        closeLevelUpModal
       }}
     >
       {children}

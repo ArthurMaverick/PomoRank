@@ -109,10 +109,23 @@ export const Container = styled.section`
           height: 50px;
           width: 50px;
           background: #2E384D;
+          box-shadow: 0 2px 6px rgba(0,0,0,.2);
           border-radius: 0px 5px 5px 0px;
           border: none;
+          &:hover{
+            opacity: 90%;
+          }
+        }
+
+        button:disabled {
+          background: #fff;
+          background: linear-gradient(-90deg, #ffffff 0%, #ffffff88 100%);
+          box-shadow: 0 2px 6px rgba(0,0,0,.2);
+          filter: blur(0.5px);
+          cursor: not-allowed;
         }
       }
+
 
       h1 {
         font-family: Inter;
@@ -125,8 +138,4 @@ export const Container = styled.section`
       }
     }
   }
-
-
-
-
 `

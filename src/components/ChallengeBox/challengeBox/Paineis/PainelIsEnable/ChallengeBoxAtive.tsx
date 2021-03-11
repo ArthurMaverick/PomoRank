@@ -28,21 +28,19 @@ export const ChallengeBoxAtive = (
       </main>
 
       <footer>
-      <ChallengeFailBtn 
-        type="button"
-        // className={style.ChallengeBox.challengeFailBtn}
-        onClick={handleChallengeFail}
-      > 
-        Falhei
-      </ChallengeFailBtn>
+        <ChallengeFailBtn 
+          type="button"
+          onClick={handleChallengeFail}
+        > 
+          Falhei
+        </ChallengeFailBtn>
 
-      <ChallengeSuccededBtn 
-        type="button"
-        // className={style.ChallengeBox.challengeSuccededBtn}
-        onClick={handleChallengeSucceeded}             
-      > 
-        Completei
-      </ChallengeSuccededBtn>
+        <ChallengeSuccededBtn 
+          type="button"
+          onClick={handleChallengeSucceeded}             
+        > 
+          Completei
+        </ChallengeSuccededBtn>
       </footer>
     </ChallengeActive>
   )

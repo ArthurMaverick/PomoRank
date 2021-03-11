@@ -10,10 +10,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   <>
     <ThemeProvider theme={theme}>
       <Provider session={pageProps.session}>
-        <CountdownProvider>
-          <Component {...pageProps} />
-        <GlobalStyle/>
-        </CountdownProvider>
+          <CountdownProvider>
+            <Component {...pageProps} />
+          <GlobalStyle/>
+          </CountdownProvider>
       </Provider>
     </ThemeProvider>
   </>

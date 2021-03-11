@@ -1,18 +1,33 @@
 // import {signin } from 'next-auth/client'
-import React from 'react'
-import {SingInContainer} from './styles'
-
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { SingInContainer } from './styles'
 
 
 
 export const SingIn = ({signIn}) => {
+  const [username, setUsername] = useState('')
+  // const [newUser, setNewuser] = useState('')
+
+  function removespaces (value: string) {
+    if(!value) return ''
+    const removeSpace = value.replaceAll(' ', '')
+    return removeSpace
+  }
+
+  const redirect = {
+      callbackUrl: 'http://localhost:3000/dashboard',
+  }
+
+
   return (
     <SingInContainer>
       <header>
           <nav>
             <ul>
               <li>
-                <button onClick={()=> signIn()}>Sign in</button>
+                <button 
+                onClick={()=> signIn('github', redirect)}>Sign in</button>
               </li>
             </ul>
           </nav>
@@ -35,15 +50,43 @@ export const SingIn = ({signIn}) => {
                 para começar</p>
               </div>
                 <div className="formulario">
-                  <div>
-                    <input type='text' placeholder="Digite seu username" autoFocus/>
+
+                  <div className="nowrap">
+                      <input 
+                        type='text' 
+                        placeholder="Digite seu username" 
+                        autoFocus
+                        value={username}
+                        onChange={e=>setUsername(e.target.value)}
+                        
+                      />           
+                      <Link
+                        href={{
+                            pathname: '/dashboardGithub',
+                            query: { name: removespaces(username) },
+                        }}
+                        >
+                        <button 
+                            disabled={!username}>
+                            <img src="icons/Vector.png" alt="Seta"/>
+                          </button>
+                      </Link>
+                      
                   </div>
-                  <div>
-                    <button><img src="icons/Vector.png" alt="Seta"/></button>
-                  </div>
+                  
+                  <div className="newuser">
+                      <h2>Quero Experimentar</h2> 
+                        <Link href={{
+                          pathname: '/dashboardGithub'  
+                        }}>
+                        <button className="newuserBtn">Entrar</button>
+                      </Link>
+                    </div>
+                            
+                </div>
+                    
                 </div>
             </div>
-          </div>
         </main>
     </SingInContainer>
   )

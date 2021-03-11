@@ -4,7 +4,8 @@ export const CoundownBtn = styled.button`
   width: 100%;
   height: 5rem;
  
-  margin-top: 2rem;
+  margin-top: 1.25rem;
+  margin: 0 auto;
 
   display: flex;
   justify-content: center;
@@ -29,4 +30,6 @@ export const CoundownBtn = styled.button`
     color: ${props=> props.theme.text};
     cursor: not-allowed;
   }
+
+
 `
