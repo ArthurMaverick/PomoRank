@@ -1,7 +1,7 @@
-
+import {Container} from './styles'
 export const Githubuser = ({image, name, JoinName, level}) => {
   return (
-    <>
+    <Container>
     <img src={image}  alt={JoinName}/>
       
     <div>
@@ -11,6 +11,6 @@ export const Githubuser = ({image, name, JoinName, level}) => {
          level {level}
       </p>
     </div>
-    </>
+    </Container>
   )
 }

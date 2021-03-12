@@ -11,7 +11,7 @@ export const ExperienceBar = () => {
     <ExperienceBarUi percentToNextLevel={percentToNextLevel} >
       <span>0 xp</span>
       <div>
-        <div/>
+      <div/>
         
         <span className='currentExperience'>
           {currentExperience}xp

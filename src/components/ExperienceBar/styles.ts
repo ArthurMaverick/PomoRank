@@ -6,12 +6,15 @@ interface BarProps {
 
 
 export const ExperienceBarUi =  styled.div<BarProps>`
+  margin: 0 120px;
   grid-area: 'experiencebar';
   display: flex;
   align-items: center;
+  justify-content: center;
   
   @media(max-width: 800px) {
     grid-area: 'experiencebar';
+    margin: 0 auto;
   }
 
   span {

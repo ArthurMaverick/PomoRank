@@ -8,7 +8,7 @@ import {
   CountDown, 
   ExperienceBar, 
   Profile, 
-  NameNotFound} from '../components'
+  NameNotFound, MenuBar} from '../components'
 //contexts
 import { CountdownProvider, Challengeprovider } from '../contexts'
 //interfaces
@@ -41,7 +41,10 @@ export default function DashBoardGithub({ json }:GithubProps  ) {
           <div className='challengerBox'>
             <ChallengeBox/>
           </div>
-
+          <div className="footer">
+             <MenuBar/>
+          </div>
+          
          </section>
        </CountdownProvider>
      </ContainerHomePage>

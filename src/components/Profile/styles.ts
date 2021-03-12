@@ -4,13 +4,13 @@ export const ProfileContainer = styled.div`
   display: flex;
   align-items: center;
 
-  & > img {
+  & div > img {
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
   }
 
-  div {
+ div > div {
     margin-left: 1.5rem;
   }
 

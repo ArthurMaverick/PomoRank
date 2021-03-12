@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { getSession, useSession } from 'next-auth/client'
 //components
-import { ChallengeBox, CompleteChallenges, CountDown, ExperienceBar, Profile, Custom } from '../components'
+import { ChallengeBox, CompleteChallenges, CountDown, ExperienceBar, Profile, Custom, MenuBar } from '../components'
 import { ContainerHomePage } from '../components/view'
 //contexts
 import { Challengeprovider, CountdownProvider } from '../contexts'
@@ -38,8 +38,10 @@ export default function DashBoard({
             <title>{session.user.name +' | ' + 'Movit'}</title>
           </Head>
           
-          <ExperienceBar/>
-          
+           
+             <ExperienceBar/>
+           
+         
   
           <CountdownProvider>
             <section>
@@ -50,6 +52,9 @@ export default function DashBoard({
               </div>
               <div className='challengerBox'>
                 <ChallengeBox/>
+              </div>
+              <div className="footer">
+                 <MenuBar/>
               </div>
             </section>
           </CountdownProvider>

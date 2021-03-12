@@ -7,3 +7,4 @@ export * from './LevelUpModal';
 export * from './Login';
 export * from './Profile';
 export * from './view';
+export * from './menuBar'
