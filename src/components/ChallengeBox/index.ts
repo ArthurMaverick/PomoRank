@@ -1,1 +1,1 @@
-export * from './challengeBox/challengeBox';
+export * from './challengeBox/challengeBox'

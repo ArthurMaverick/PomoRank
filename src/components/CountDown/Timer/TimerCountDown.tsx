@@ -1,12 +1,11 @@
-import React from 'react'
-import {CountdownContainer} from './styles'
+import { CountdownContainer } from './styles'
 
 interface MinutesAndSecondsProps {
   min: Array<string>
   sec: Array<string>
 }
 
-export const Timer = ({min, sec}: MinutesAndSecondsProps) => {
+export const Timer = ({ min, sec }: MinutesAndSecondsProps) => {
   return (
     <CountdownContainer>
         <div>
