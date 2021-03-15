@@ -1,5 +1,7 @@
+// TODO this is a modal
+
 import React from 'react'
-import {ChallengeActive, ChallengeFailBtn,ChallengeSuccededBtn} from './styles'
+import {ChallengeActive,  ChallengeFailBtn,ChallengeSuccededBtn} from './styles'
 
 interface ChallengeBoxAtiveProps {
   activeChallenge: {
@@ -20,6 +22,7 @@ export const ChallengeBoxAtive = (
 
   return (
     <ChallengeActive>
+      
       <header>Ganhe {activeChallenge.amount} xp</header>
       <main>
         <img src="icons/body.svg" alt={`icon/${activeChallenge.type}`}/>

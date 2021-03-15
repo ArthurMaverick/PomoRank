@@ -9,7 +9,7 @@ import {SingOutContainer} from './styles'
 export const SignOut = ({signOut}) => {
   return (
     <SingOutContainer>
-      <header>
+      <header className='menu'>
           <nav>
             <ul>
               <li>
@@ -22,7 +22,7 @@ export const SignOut = ({signOut}) => {
           </nav>
         </header>
          
-        <main>
+        <main className='hero'>
           <div className="capa">
               <img  src="icons/Simbolo.png" alt="capa"/>
           </div>

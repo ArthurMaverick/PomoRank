@@ -7,13 +7,18 @@ export const Container = styled.footer`
 
   @media(max-width: 800px) {
     width: 100%;
-    height: 90px;
+    height: 7vh;
     display: flex;
     
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   ul {
@@ -54,9 +59,8 @@ export const Container = styled.footer`
         }
           @media(max-width: 800px){
             width: 55px;
-            height: 89px;
+            height: 56px;
             border: none;
-            border-bottom: 5px  #5965E0 solid;
             color: white;
             transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
             background: none;

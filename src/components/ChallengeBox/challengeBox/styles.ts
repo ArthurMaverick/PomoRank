@@ -15,6 +15,8 @@ export const ChallengeBoxContainer = styled.div`
   place-content: center;
   text-align: center;
 
-  /* @media(max-width: 800px) {} */
+  @media(max-width: 800px) {
+    padding: 0;
+  }
 
 ` 

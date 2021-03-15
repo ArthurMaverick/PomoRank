@@ -3,11 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.section`
   width: 100vw;
   height: 100vh;
-  /* background: linear-gradient(329.54deg, #5965E0 0%, #4953B8 100%);
-   */
-   background-image: url('icons/background.svg');
-
+  background-image: url('icons/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
   header {
+    grid-area: menu;
     display: flex;
     justify-content: flex-end;
     margin: 0 2rem;
@@ -40,6 +42,7 @@ export const Container = styled.section`
   }
 
   main {
+
     display: grid;
     margin-top: 200px;
 

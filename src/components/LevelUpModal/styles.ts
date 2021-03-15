@@ -15,7 +15,7 @@ export const Overlay = styled.div`
 `
 
 export const ContainerModal = styled.div`
-  background: var(--white);
+  background: white;
   width: 100%;
   max-width: 400px;
   padding: 2rem 3rem;

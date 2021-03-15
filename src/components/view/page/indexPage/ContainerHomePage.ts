@@ -10,7 +10,7 @@ export const ContainerHomePage = styled.section`
   section {
   display: grid;
   grid-template-columns: 104px 1fr 1fr;
-  grid-template-rows: 115px  1fr 1fr ;
+  grid-template-rows: 115px  1fr ;
   grid-template-areas:
   'menubar . .'
   'menubar leftSide rigthSide';
@@ -30,18 +30,26 @@ export const ContainerHomePage = styled.section`
     }    
   
   @media(max-width: 800px) {
+    /* height: 98vh; */
     display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas:
-        'leftSide'
-        'rigthSide'
-        'menubar';
-        /* flex: 1; */
-        /* display: grid;
-        grid-template-columns: 1fr 1fr; */
-        row-gap: 1px;
-        align-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 64vh 20vh 7vh;
+    grid-template-areas:
+    'leftSide'
+    'rigthSide'
+    'menubar';
+    /* flex: 1; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    row-gap: 1px;
+    align-content: center;
+
+    div.challengerBox {
+      /* padding: 0; */
+      display: flex;
+      justify-content: center;
+
+    }
   }
 }
 

@@ -14,15 +14,15 @@ export const SingIn = ({signIn}) => {
     const removeSpace = value.replaceAll(' ', '')
     return removeSpace
   }
-
+ //TODO change this url to prod
   const redirect = {
-      callbackUrl: 'http://localhost:3000/dashboard',
+      callbackUrl: 'https://pomo-rank.vercel.app/dashboard',
   }
 
 
   return (
     <SingInContainer>
-      <header>
+      <header className='menu'>
           <nav>
             <ul>
               <li>
@@ -33,12 +33,12 @@ export const SingIn = ({signIn}) => {
           </nav>
         </header>
          
-        <main>
+        <main className='hero'>
           <div className="capa">
               <img  src="icons/Simbolo.png" alt="capa"/>
           </div>
 
-           <div className="form">
+          <div className="form">
             <div className="logo">
               <img  src="icons/LogoBlack.png" alt="logo"/>
             </div>
@@ -74,7 +74,7 @@ export const SingIn = ({signIn}) => {
                       
                   </div>
                   
-                  <div className="newuser">
+                    <div className="newuser">
                       <h2>Quero Experimentar</h2> 
                         <Link href={{
                           pathname: '/dashboardGithub'  

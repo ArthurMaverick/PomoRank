@@ -1,20 +1,61 @@
+import { Container } from './../../Error404/styles';
 import styled from 'styled-components'
 
 
 export const SingInContainer = styled.section`
-   width: 100vw;
+  width: 100vw;
   height: 100vh;
-  /* background: linear-gradient(329.54deg, #5965E0 0%, #4953B8 100%);
-   */
-   background-image: url('icons/background.svg');
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
+  background-image: url('icons/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media(max-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 
+    'menu'
+    'hero';
+
+    header{
+      grid-area: menu;
+    }
+
+    main.hero {
+      grid-area: hero;
+      margin: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;      
+
+      div.capa {
+        position: absolute;
+        
+        img{
+          width: 100%;  
+        }
+      }
+
+      div.form {
+        position: relative;
+
+        
+      }
+
+    }
+    
+  }
+  
+  
 
   header {
     display: flex;
     justify-content: flex-end;
     margin: 0 2rem;
+
+  
+
 
     ul {
       display: flex;
@@ -52,8 +93,11 @@ export const SingInContainer = styled.section`
     grid-template-areas: 
     'capa form'; 
 
+   
+
     div.capa {
       grid-area: capa;
+     
 
     }
 
@@ -64,6 +108,17 @@ export const SingInContainer = styled.section`
 
       div.logo {
         margin-bottom: 4.5rem;
+        @media(max-width: 600px) {
+            display: flex;
+            justify-content: center;
+          }
+        
+        img {
+          @media(max-width: 600px) {
+            width: 70%
+          }
+        }
+        
       }
 
       div.login_text {
@@ -71,6 +126,10 @@ export const SingInContainer = styled.section`
         display: flex;
         align-items: center;
         gap: 15px;
+        @media(max-width: 800px) {
+        display: flex;
+        justify-content: center;
+        }
         
         p {
           font-family: Inter;
@@ -79,6 +138,10 @@ export const SingInContainer = styled.section`
           font-size: 20px;
           line-height: 30px;
           color: ${props=> props.theme.title};
+          @media(max-width: 800px) {
+            display: none;
+
+          }
         }
       }
 
@@ -89,6 +152,9 @@ export const SingInContainer = styled.section`
         div.nowrap {
           display: flex;
           flex-wrap: nowrap;
+          @media(max-width: 800px) {
+            margin: 0 auto;
+          }
 
           input {
             margin-top: 20px;
@@ -109,6 +175,10 @@ export const SingInContainer = styled.section`
               color: #00000088;
               padding-left: 10px;
             }
+
+            @media(max-width: 800px) {
+              width: 240px;  
+            }
           }
 
           button {
@@ -118,24 +188,33 @@ export const SingInContainer = styled.section`
             background: #2E384D;
             border-radius: 0px 5px 5px 0px;
             border: none;
+
+           
           }
         }
 
-        div.newuser{
-        
-        margin-top: 100px;
-      
+        div.newuser {
+          margin-top: 100px;
+          
+          
+          @media(max-width: 800px){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+            
 
-        button{
-          margin-top: 20px;
-          width: 150px;
-          height: 50px;
-          border: none;
-          border-radius: 5px;
-          background: linear-gradient(-90deg, #ffffff 0%, #ffffff88 100%);
-          color: ${(props)=>props.theme.title};
-          font-weight: 600;
-          font-size: 19px;
+          button{
+            margin-top: 20px;
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(-90deg, #ffffff 0%, #ffffff88 100%);
+            color: ${(props)=>props.theme.title};
+            font-weight: 600;
+            font-size: 19px;
           }
         }
       }
@@ -147,7 +226,10 @@ export const SingInContainer = styled.section`
         font-weight: 600;
         font-size: 36px;
         line-height: 46px;
-
+        @media(max-width: 800px) {
+          display: flex;
+          justify-content: center;
+        }
       }
 
     }

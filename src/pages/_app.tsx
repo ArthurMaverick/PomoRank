@@ -4,6 +4,7 @@ import {GlobalStyle} from '../styles/global'
 import {theme} from '../styles/global'
 import {CountdownProvider} from '../contexts'
 import {Provider} from 'next-auth/client'
+import {RecoilRoot} from 'recoil';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Provider session={pageProps.session}>
           <CountdownProvider>
-            <Component {...pageProps} />
+            <RecoilRoot>
+              <Component {...pageProps} />
+            </RecoilRoot>
           <GlobalStyle/>
           </CountdownProvider>
       </Provider>

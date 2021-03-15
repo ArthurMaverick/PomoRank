@@ -6,7 +6,7 @@ export const MenuBar = () => {
     <Container>
       <ul>
         <li>
-          <Link href="/" passHref>
+          <Link href="/ranking" passHref>
             <button className='btn_ranking'>
               <img src="icons/award3.svg" alt="award"/>
             </button>
